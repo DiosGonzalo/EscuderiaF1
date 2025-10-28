@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Mecánicos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .coche-visual {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .badge-estado {
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+        .card-info {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .porcentaje {
+            background: #dc3545;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .porcentaje.completo {
+            background: #6c757d;
+        }
+        .componente-box {
+            background: white;
+            border-radius: 8px;
+            padding: 1.2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="bi bi-gear-fill text-primary"></i> Sistema Mecánicos F-1
+        </a>
+        <div class="d-flex gap-2">
+            <a th:href="@{/dashboard}" class="btn btn-sm btn-outline-primary">
+                <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
+            <a th:href="@{/mecanicos}" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-people"></i> Mecánicos
+            </a>
+            <a th:href="@{/inventario}" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-box"></i> Inventario
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenido Principal -->
+<div class="container py-4">
+    <!-- Título -->
+    <div class="mb-4">
+        <h2 class="fw-bold">Dashboard Mecánicos</h2>
+        <p class="text-muted">Gestión de trabajos de los mecánicos en el Box</p>
+    </div>
+
+    <!-- Selectores de Coche -->
+    <div class="row mb-4">
+        <div class="col-md-6 mb-3">
+            <label class="form-label fw-semibold">Coche 1</label>
+            <select class="form-select" id="coche1">
+                <option th:each="coche : ${coches}"
+                        th:value="${coche.id}"
+                        th:text="${coche.marca + ' ' + coche.modelo}"
+                        th:selected="${coche.id == cocheSeleccionado}">
+                </option>
+            </select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label fw-semibold">Coche 2</label>
+            <select class="form-select" id="coche2">
+                <option selected>Seleccionar coche</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Estado de Componentes -->
+    <div class="alert alert-light border">
+        <strong>Estado de Componentes: Coche</strong><br>
+        <small class="text-muted" th:text="'Total de ' + ${totalComponentes} + ' componentes para este deporte'">
+            Total de 15 componentes para este deporte
+        </small>
+    </div>
+
+    <!-- Visualización del Coche -->
+    <div class="coche-visual text-center">
+        <img th:src="@{/images/coche-f1.png}"
+             src="/images/coche-f1.png"
+             alt="Coche F1"
+             class="img-fluid"
+             style="max-width: 600px;">
+
+        <!-- Leyenda de Estados -->
+        <div class="mt-4">
+                <span class="badge-estado bg-success text-white">
+                    <i class="bi bi-check-circle-fill"></i> Una tasa (5.4M)
+                </span>
+            <span class="badge-estado bg-warning text-dark">
+                    <i class="bi bi-exclamation-triangle-fill"></i> Una Vuelta (40-70M)
+                </span>
+            <span class="badge-estado bg-danger text-white">
+                    <i class="bi bi-x-circle-fill"></i> Una Ma (5-70%)
+                </span>
+            <span class="badge-estado bg-secondary text-white">
+                    <i class="bi bi-info-circle-fill"></i> Crítico / NoMark
+                </span>
+        </div>
+    </div>
+
+    <!-- Información en Dos Columnas -->
+    <div class="row mt-4">
+        <!-- Columna Izquierda -->
+        <div class="col-lg-6">
+            <!-- Último GP -->
+            <div class="card-info">
+                <h5 class="mb-3">
+                    <i class="bi bi-flag-fill text-primary"></i> Último GP
+                </h5>
+                <p class="mb-1 fw-bold" th:text="${ultimoGP?.nombre}">GP de Mónaco</p>
+                <small class="text-muted" th:text="${ultimoGP?.fecha}">25 de mayo de 2024</small>
+            </div>
+
+            <!-- Daños Reportados -->
+            <div class="card-info">
+                <h5 class="mb-3">Daños Reportados</h5>
+                <p class="mb-0" th:text="${danosReportados}">No tiene daños</p>
+            </div>
+        </div>
+
+        <!-- Columna Derecha -->
+        <div class="col-lg-6">
+            <!-- Último Crítico -->
+            <div class="card-info">
+                <h5 class="mb-3">
+                    <i class="bi bi-exclamation-triangle-fill text-danger"></i> Último Crítico
+                </h5>
+
+                <div th:each="critico : ${componentesCriticos}" class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <span th:text="${critico.nombre}">Motor del coche</span>
+                        <span class="text-muted"> - </span>
+                        <span th:text="${critico.accion}">Remplazar ahora</span>
+                    </div>
+                    <span class="porcentaje" th:text="${critico.porcentaje + '%'}">85%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Porcentaje de Componentes -->
+    <div class="mt-5">
+        <h5 class="mb-4">
+            <i class="bi bi-bar-chart-fill text-primary"></i> Porcentaje de Componentes
+        </h5>
+
+        <div class="row g-3">
+            <!-- ICE -->
+            <div class="col-md-3">
+                <div class="componente-box">
+                    <h6 class="mb-3">ICE</h6>
+                    <span class="porcentaje" th:text="${estadisticas.ice?.porcentaje + '%'}">85%</span>
+                    <p class="text-muted small mb-0 mt-2" th:text="'De ' + ${estadisticas.ice?.total}">De 3</p>
+                </div>
+            </div>
+
+            <!-- Turbo -->
+            <div class="col-md-3">
+                <div class="componente-box">
+                    <h6 class="mb-3">Turbo</h6>
+                    <span class="porcentaje completo" th:text="${estadisticas.turbo?.porcentaje + '%'}">100%</span>
+                    <p class="text-muted small mb-0 mt-2" th:text="'De ' + ${estadisticas.turbo?.total}">De 3</p>
+                </div>
+            </div>
+
+            <!-- ERS -->
+            <div class="col-md-3">
+                <div class="componente-box">
+                    <h6 class="mb-3">ERS</h6>
+                    <span class="porcentaje completo" th:text="${estadisticas.ers?.porcentaje + '%'}">100%</span>
+                    <p class="text-muted small mb-0 mt-2" th:text="'De ' + ${estadisticas.ers?.total}">De 2</p>
+                </div>
+            </div>
+
+            <!-- Alerón Delantero -->
+            <div class="col-md-3">
+                <div class="componente-box">
+                    <h6 class="mb-3">Alerón Delantero</h6>
+                    <span class="porcentaje" th:text="${estadisticas.aleron?.porcentaje + '%'}">97%</span>
+                    <p class="text-muted small mb-0 mt-2" th:text="'De ' + ${estadisticas.aleron?.total}">De 2</p>
+                </div>
+            </div>
+
+            <!-- Caja de Cambios -->
+            <div class="col-md-3">
+                <div class="componente-box">
+                    <h6 class="mb-3">Caja de Cambios</h6>
+                    <span class="porcentaje" th:text="${estadisticas.caja?.porcentaje + '%'}">95%</span>
+                    <p class="text-muted small mb-0 mt-2" th:text="'De ' + ${estadisticas.caja?.total}">De 4</p>
+                </div>
+            </div>
+
+            <!-- Suspensión -->
+            <div class="col-md-3">
+                <div class="componente-box">
+                    <h6 class="mb-3">Suspensión</h6>
+                    <span class="porcentaje" th:text="${estadisticas.suspension?.porcentaje + '%'}">92%</span>
+                    <p class="text-muted small mb-0 mt-2" th:text="'De ' + ${estadisticas.suspension?.total}">De 2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
