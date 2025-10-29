@@ -67,6 +67,25 @@ public class ComponenteService {
         .toList()
         .size();
     }
+    public List<Componente> buscarPorNombre(String nombre){
+        List<Componente> buscados = new ArrayList<>();
+        for(Componente componente : repo.findAll().stream().toList()){
+            if(componente.getTipo().equals(nombre)){
+                buscados.add(componente);
+            }
+        }
+        return buscados;
+    }
+    public Componente buscarPorId(Long id){
+        return repo.findById(id).stream().map();
+
+
+
+    }
+    
+}
+
+
 
 
 
