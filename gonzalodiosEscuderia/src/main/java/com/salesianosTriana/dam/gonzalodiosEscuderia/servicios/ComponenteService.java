@@ -62,7 +62,11 @@ public class ComponenteService {
         return desgasteGeneral/repo.findAll().stream().toList().size();
     }
 
-    
+    public double cantidadComponentes(){
+        return repo.findAll().stream()
+        .toList()
+        .size();
+    }
 
 
 
