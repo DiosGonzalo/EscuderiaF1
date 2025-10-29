@@ -1,13 +1,14 @@
 package com.salesianosTriana.dam.gonzalodiosEscuderia.servicios;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Coche;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Componente;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.repositorios.ComponenteRepository;
-import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class ComponenteService {
@@ -31,7 +32,7 @@ public class ComponenteService {
         return componentesCoche;
     }
 
-    public String desgasteComponente(long id){
+    public double desgasteComponente(long id){
         Componente componenteDevolver= null;
         for(Componente componente : repo.findAll().stream().toList()){
             if(componente.getId() == id){
@@ -41,6 +42,27 @@ public class ComponenteService {
         return componenteDevolver.getEstado();
     }
 
+    public double desgasteMedioCoche(Coche coche){
+        double desgasteTotal = 0;
+        List<Componente> componentesCoche= new ArrayList<>();
+        for( Componente componente : repo.findAll().stream().toList()){
+            if(componente.getCoche().equals(coche)){
+                desgasteTotal+=componente.getEstado();
+                componentesCoche.add(componente);
+            }
+        }  
+        return desgasteTotal/componentesCoche.size();
+    }
+
+    public double estadoGeneral(){
+        double desgasteGeneral = 0;
+        for(Componente componente : repo.findAll().stream().toList()){
+            desgasteGeneral+= componente.getEstado();
+        }
+        return desgasteGeneral/repo.findAll().stream().toList().size();
+    }
+
+    
 
 
 

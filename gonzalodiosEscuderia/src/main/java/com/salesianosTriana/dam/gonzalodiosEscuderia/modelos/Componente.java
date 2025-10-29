@@ -1,8 +1,18 @@
 package com.salesianosTriana.dam.gonzalodiosEscuderia.modelos;
 
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
@@ -18,7 +28,7 @@ public class Componente {
     private String tipo;
     private long limiteUsos;
     private long vecesUsado;
-    private String estado;
+    private double estado;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "coche_id")

@@ -1,11 +1,44 @@
 package com.salesianosTriana.dam.gonzalodiosEscuderia.servicios;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Coche;
+import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Componente;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.repositorios.CocheRepositorio;
-import org.springframework.stereotype.Controller;
 
-@Controller
+@Service
 public class CocheService {
-    private CocheRepositorio repo;
+   private final CocheRepositorio repo;
 
+   public CocheService(CocheRepositorio repo) {
+       this.repo = repo;
+   }
 
+    public List<Coche> listaCompleta() {
+        return repo.findAll();
+    }
+
+    //Metodo para ver si un coche esta listo, si mas de el 75 de los componentes esta por debajo del 50% no lo esta
+    public boolean  estadoCoches(Long id){
+        Coche coche = repo.findById(id).orElse(null);
+        if (coche == null || coche.getComponentes() == null || coche.getComponentes().isEmpty()) {
+            return false;
+        }
+
+        double componentesMalos = 0;
+        for (Componente componente : coche.getComponentes()){
+            if (componente.getEstado() < 50){
+                componentesMalos++;
+            }
+        }
+
+        double porcentajeMalos = (componentesMalos * 100.0) / coche.getComponentes().size();
+        if (porcentajeMalos > 75){
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
