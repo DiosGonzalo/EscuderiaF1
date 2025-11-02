@@ -1,6 +1,7 @@
 package com.salesianosTriana.dam.gonzalodiosEscuderia.modelos;
 
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,8 @@ public class Carrera {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nombre;
-    private LocalDate fecha;
+    private Date fecha;
+    private String imagen;
 
     @ManyToMany (cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinTable(

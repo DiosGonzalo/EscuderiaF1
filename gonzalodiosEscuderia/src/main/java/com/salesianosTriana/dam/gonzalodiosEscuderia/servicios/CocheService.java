@@ -1,6 +1,8 @@
 package com.salesianosTriana.dam.gonzalodiosEscuderia.servicios;
 
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -28,11 +30,10 @@ public class CocheService {
         }
 
         double componentesMalos = 0;
-        for (Componente componente : coche.getComponentes()){
-            if (componente.getEstado() < 50){
-                componentesMalos++;
-            }
-        }
+        componentesMalos =    coche.getComponentes().stream()
+        .filter(n -> n.getEstado()<50)
+        .collect(Collectors.toList())
+        .size();
 
         double porcentajeMalos = (componentesMalos * 100.0) / coche.getComponentes().size();
         if (porcentajeMalos > 75){

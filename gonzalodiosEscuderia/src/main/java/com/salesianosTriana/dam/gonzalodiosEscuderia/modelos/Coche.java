@@ -20,7 +20,9 @@ public class Coche {
     private long id;
 
     private String modelo;
+    private String imagen;
     private String piloto;
+    
     @ManyToMany (mappedBy = "coches")
     private List<Carrera> carreras = new ArrayList<>();
 

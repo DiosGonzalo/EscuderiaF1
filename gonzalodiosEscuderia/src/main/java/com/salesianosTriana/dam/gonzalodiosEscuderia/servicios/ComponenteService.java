@@ -13,13 +13,18 @@ import com.salesianosTriana.dam.gonzalodiosEscuderia.repositorios.ComponenteRepo
 @Service
 public class ComponenteService {
 
-    private ComponenteRepository repo;
-
+    private final ComponenteRepository repo;
+    
+    public ComponenteService(ComponenteRepository repo) {
+        this.repo = repo;
+    }
 
     public List<Componente> listaComponentes(){
         return repo.findAll().stream()
                 .toList();
     }
+
+    
     public List<Componente> componentesCoche(Coche coche) {
         List<Componente> componentesCoche = new ArrayList<>();
         if (coche == null) return componentesCoche;
@@ -77,9 +82,7 @@ public class ComponenteService {
         return buscados;
     }
     public Componente buscarPorId(Long id){
-        return repo.findById(id).stream().map();
-
-
+        return repo.findById(id).orElse(null);
 
     }
     
@@ -96,4 +99,4 @@ public class ComponenteService {
 
 
 
-}
+
