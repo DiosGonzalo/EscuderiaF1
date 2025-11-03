@@ -30,6 +30,7 @@ public class Componente {
     private long limiteUsos;
     private long vecesUsado;
     private double estado;
+    private double caballos;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "coche_id")

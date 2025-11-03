@@ -22,7 +22,7 @@ public class Coche {
     private String modelo;
     private String imagen;
     private String piloto;
-    private String potencia;
+    private double potencia;
     @ManyToMany (mappedBy = "coches")
     private List<Carrera> carreras = new ArrayList<>();
 

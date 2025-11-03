@@ -1,10 +1,14 @@
 package com.salesianosTriana.dam.gonzalodiosEscuderia.controllers;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Carrera;
@@ -13,6 +17,14 @@ import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Componente;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.CarreraService;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.CocheService;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.ComponenteService;
+import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.base.ServiciosBase;
+
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+
 
 
 
@@ -34,7 +46,14 @@ public class CocheController {
     }
 
     @GetMapping("/dashboard") 
+    
     public String index(Model model){
+
+        List<String> tipos = List.of(
+        "Motor", "Turbo", "Bateria", "Caja de Cambios", "Neumaticos", 
+        "Aleron", "Paragolpes", "Suspension", "Direccion");
+
+        model.addAttribute("tipos", tipos);
         List<Coche> coches = cocheService.listaCompleta();
         model.addAttribute("coches", coches); 
 
@@ -53,6 +72,8 @@ public class CocheController {
     
     @GetMapping("/garaje/{id}")
     public String Garaje(@PathVariable Long id, Model model) {
+
+        
 
         List<Coche> coches = cocheService.listaCompleta();
         model.addAttribute("coches", coches);
@@ -73,5 +94,66 @@ public class CocheController {
         return "garaje";
     }
     
+    @GetMapping("/garaje/nuevo")
+    public String crearCoche(Model model) {
+        
+
+        List<String> tipos = List.of(
+        "Motor", "Turbo", "Bateria", "Caja de Cambios", "Neumaticos", 
+        "Aleron", "Paragolpes", "Suspension", "Direccion");
+
+        List<Componente> componentes = componenteService.componentesSinCoche();
+        model.addAttribute("componentes",componentes );
+        model.addAttribute("tipos", tipos ); // ¡Añadimos la lista al modelo!
+        model.addAttribute("coche", new Coche());
+        return "agregarCoche";
+    }
+    
+    @PostMapping("/garaje/nuevo/crear")
+    public String crearCoche(@Validated @ModelAttribute("coche")  Coche  coche,BindingResult bindingResult,@RequestParam("componenteIds")List<Long> componenteIds,RedirectAttributes redirectAttributes, Model model) {
+        
+
+
+        List<Componente>componenteSeleccionado = componenteIds.stream()
+        .map(id -> componenteService.findById(id).orElse(null))
+        .filter(n -> n != null)
+        .collect(Collectors.toList());
+        coche.setComponentes(componenteSeleccionado);
+        componenteSeleccionado.forEach(c -> c.setCoche(coche));
+
+
+        if(cocheService.comprobarRepetirComponentes(coche)){
+            bindingResult.rejectValue("componentes", "Error componentes", "No se pueden repetir componentes de un mismo tipo");
+
+        }
+        if(bindingResult.hasErrors()){
+            return "agregarCoche";
+
+        }
+
+
+
+        try{
+            coche.setPotencia(cocheService.calcularCaballos(coche));
+            cocheService.guardar(coche);
+            redirectAttributes.addFlashAttribute("Bien", "Coche creado con exito");
+            return "redirect:/garaje";
+
+        } catch( Exception e){
+            redirectAttributes.addFlashAttribute("Error",  "Error al crear el coche" + e.getMessage());
+            return "redirect:/garaje/nuevo";
+        }
+
+    }
+    
+   
+    
+
+
+
+
+
+
+
   }
 
