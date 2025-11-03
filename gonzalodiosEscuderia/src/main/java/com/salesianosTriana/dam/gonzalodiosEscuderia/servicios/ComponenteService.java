@@ -47,45 +47,23 @@ public class ComponenteService {
         return componenteDevolver.getEstado();
     }
 
-    public double desgasteMedioCoche(Coche coche){
-        double desgasteTotal = 0;
-        List<Componente> componentesCoche= new ArrayList<>();
-        for( Componente componente : repo.findAll().stream().toList()){
-            if(componente.getCoche().equals(coche)){
-                desgasteTotal+=componente.getEstado();
-                componentesCoche.add(componente);
+    public void necesitaCambio(Coche coche){
+        for (Componente componente : componentesCoche(coche)){
+            if (componente.getEstado() < 40){
+                System.out.println(componente + "Necesita cambio");
+            }else{
+                System.out.println(componente);
             }
-        }  
-        return desgasteTotal/componentesCoche.size();
-    }
-
-    public double estadoGeneral(){
-        double desgasteGeneral = 0;
-        for(Componente componente : repo.findAll().stream().toList()){
-            desgasteGeneral+= componente.getEstado();
         }
-        return desgasteGeneral/repo.findAll().stream().toList().size();
     }
-
-    public double cantidadComponentes(){
+    public Componente buscarNombreComponenteCoche( String nombre, Coche coche){
         return repo.findAll().stream()
+        .filter(n -> n.getCoche().equals(coche))
+        .filter(n-> n.getNombre().equals(nombre))
         .toList()
-        .size();
+        .getFirst();
     }
-    public List<Componente> buscarPorNombre(String nombre){
-        List<Componente> buscados = new ArrayList<>();
-        for(Componente componente : repo.findAll().stream().toList()){
-            if(componente.getTipo().equals(nombre)){
-                buscados.add(componente);
-            }
-        }
-        return buscados;
-    }
-    public Componente buscarPorId(Long id){
-        return repo.findById(id).orElse(null);
 
-    }
-    
 }
 
 

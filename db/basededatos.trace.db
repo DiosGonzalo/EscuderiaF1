@@ -1578,3 +1578,723 @@ Syntax error in SQL statement "([*]3, 1),"; expected "(, SELECT, TABLE, VALUES";
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
 Syntax error in SQL statement "([*]3, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
 (3, 2) [42001-232]
+2025-11-03 12:17:55.932996+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:17:55.954937+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen') [42001-232]
+2025-11-03 12:17:56.085588+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:17:56.268100+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso') [42001-232]
+2025-11-03 12:17:56.276078+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES [42001-232]
+2025-11-03 12:17:56.285054+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Motor', 8, 1, 0.87, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Motor', 8, 1, 0.87, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Motor', 8, 1, 0.87, 1), [42001-232]
+2025-11-03 12:17:56.607192+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Turbo', 4, 0, 1.0, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Turbo', 4, 0, 1.0, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Turbo', 4, 0, 1.0, 1), [42001-232]
+2025-11-03 12:17:56.638110+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Batería', 4, 2, 0.5, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Batería', 4, 2, 0.5, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Batería', 4, 2, 0.5, 2), [42001-232]
+2025-11-03 12:17:56.648084+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Caja de Cambios', 5, 0, 1.0, 2) [42001-232]
+2025-11-03 12:17:56.917364+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera (id, nombre, fecha, imagen) VALUES [42001-232]
+2025-11-03 12:17:56.932324+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'), [42001-232]
+2025-11-03 12:17:56.949278+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'), [42001-232]
+2025-11-03 12:17:57.059982+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG') [42001-232]
+2025-11-03 12:17:57.236510+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera_coche (carreras_id, coche_id) VALUES [42001-232]
+2025-11-03 12:17:57.244488+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 1), [42001-232]
+2025-11-03 12:17:57.254462+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 2), [42001-232]
+2025-11-03 12:17:57.262440+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 1), [42001-232]
+2025-11-03 12:17:57.270419+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 2), [42001-232]
+2025-11-03 12:17:57.373145+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 1), [42001-232]
+2025-11-03 12:17:57.552665+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 2) [42001-232]
+2025-11-03 12:25:57.663032+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:25:57.675989+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen') [42001-232]
+2025-11-03 12:25:57.685962+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:25:57.692944+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso') [42001-232]
+2025-11-03 12:25:57.701920+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES [42001-232]
+2025-11-03 12:25:57.708902+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Motor', 8, 1, 0.87, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Motor', 8, 1, 0.87, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Motor', 8, 1, 0.87, 1), [42001-232]
+2025-11-03 12:25:57.717878+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Turbo', 4, 0, 1.0, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Turbo', 4, 0, 1.0, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Turbo', 4, 0, 1.0, 1), [42001-232]
+2025-11-03 12:25:57.724859+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Batería', 4, 2, 0.5, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Batería', 4, 2, 0.5, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Batería', 4, 2, 0.5, 2), [42001-232]
+2025-11-03 12:25:57.732840+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Caja de Cambios', 5, 0, 1.0, 2) [42001-232]
+2025-11-03 12:25:57.742813+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera (id, nombre, fecha, imagen) VALUES [42001-232]
+2025-11-03 12:25:57.752784+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'), [42001-232]
+2025-11-03 12:25:57.763755+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'), [42001-232]
+2025-11-03 12:25:57.774727+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG') [42001-232]
+2025-11-03 12:25:57.785701+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera_coche (carreras_id, coche_id) VALUES [42001-232]
+2025-11-03 12:25:57.792692+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 1), [42001-232]
+2025-11-03 12:25:57.800656+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 2), [42001-232]
+2025-11-03 12:25:57.806694+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 1), [42001-232]
+2025-11-03 12:25:57.815671+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 2), [42001-232]
+2025-11-03 12:25:57.821654+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 1), [42001-232]
+2025-11-03 12:25:57.827639+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 2) [42001-232]
+2025-11-03 12:29:09.789474+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:29:09.803411+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen') [42001-232]
+2025-11-03 12:29:09.813384+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:29:09.820365+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso') [42001-232]
+2025-11-03 12:29:09.830339+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES [42001-232]
+2025-11-03 12:29:09.838317+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Motor', 8, 1, 0.87, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Motor', 8, 1, 0.87, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Motor', 8, 1, 0.87, 1), [42001-232]
+2025-11-03 12:29:09.845297+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Turbo', 4, 0, 1.0, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Turbo', 4, 0, 1.0, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Turbo', 4, 0, 1.0, 1), [42001-232]
+2025-11-03 12:29:09.852284+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Batería', 4, 2, 0.5, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Batería', 4, 2, 0.5, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Batería', 4, 2, 0.5, 2), [42001-232]
+2025-11-03 12:29:09.862252+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Caja de Cambios', 5, 0, 1.0, 2) [42001-232]
+2025-11-03 12:29:09.871232+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera (id, nombre, fecha, imagen) VALUES [42001-232]
+2025-11-03 12:29:09.878209+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'), [42001-232]
+2025-11-03 12:29:09.886190+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'), [42001-232]
+2025-11-03 12:29:09.897159+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG') [42001-232]
+2025-11-03 12:29:09.905137+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera_coche (carreras_id, coche_id) VALUES [42001-232]
+2025-11-03 12:29:09.915111+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 1), [42001-232]
+2025-11-03 12:29:09.924088+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 2), [42001-232]
+2025-11-03 12:29:09.930210+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 1), [42001-232]
+2025-11-03 12:29:09.937192+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 2), [42001-232]
+2025-11-03 12:29:09.945171+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 1), [42001-232]
+2025-11-03 12:29:09.952152+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 2) [42001-232]
+2025-11-03 12:35:09.384313+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:35:09.397250+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen') [42001-232]
+2025-11-03 12:35:09.406224+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:35:09.415833+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso') [42001-232]
+2025-11-03 12:35:09.426775+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES [42001-232]
+2025-11-03 12:35:09.435710+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Motor', 8, 1, 0.87, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Motor', 8, 1, 0.87, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Motor', 8, 1, 0.87, 1), [42001-232]
+2025-11-03 12:35:09.442573+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Turbo', 4, 0, 1.0, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Turbo', 4, 0, 1.0, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Turbo', 4, 0, 1.0, 1), [42001-232]
+2025-11-03 12:35:09.450555+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Batería', 4, 2, 0.5, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Batería', 4, 2, 0.5, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Batería', 4, 2, 0.5, 2), [42001-232]
+2025-11-03 12:35:09.456538+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Caja de Cambios', 5, 0, 1.0, 2) [42001-232]
+2025-11-03 12:35:09.465517+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera (id, nombre, fecha, imagen) VALUES [42001-232]
+2025-11-03 12:35:09.471498+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'), [42001-232]
+2025-11-03 12:35:09.479479+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'), [42001-232]
+2025-11-03 12:35:09.520397+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG') [42001-232]
+2025-11-03 12:35:09.541829+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera_coche (carreras_id, coche_id) VALUES [42001-232]
+2025-11-03 12:35:09.553797+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 1), [42001-232]
+2025-11-03 12:35:09.566762+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 2), [42001-232]
+2025-11-03 12:35:09.575738+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 1), [42001-232]
+2025-11-03 12:35:09.584715+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 2), [42001-232]
+2025-11-03 12:35:09.591695+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 1), [42001-232]
+2025-11-03 12:35:09.600672+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 2) [42001-232]
+2025-11-03 12:38:20.963596+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:38:20.982517+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen') [42001-232]
+2025-11-03 12:38:20.994484+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:38:21.002464+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso') [42001-232]
+2025-11-03 12:38:21.014748+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES [42001-232]
+2025-11-03 12:38:21.023739+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Motor', 8, 1, 0.87, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Motor', 8, 1, 0.87, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Motor', 8, 1, 0.87, 1), [42001-232]
+2025-11-03 12:38:21.033700+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Turbo', 4, 0, 1.0, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Turbo', 4, 0, 1.0, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Turbo', 4, 0, 1.0, 1), [42001-232]
+2025-11-03 12:38:21.041680+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Batería', 4, 2, 0.5, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Batería', 4, 2, 0.5, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Batería', 4, 2, 0.5, 2), [42001-232]
+2025-11-03 12:38:21.047662+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Caja de Cambios', 5, 0, 1.0, 2) [42001-232]
+2025-11-03 12:38:21.056642+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera (id, nombre, fecha, imagen) VALUES [42001-232]
+2025-11-03 12:38:21.068622+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'), [42001-232]
+2025-11-03 12:38:21.077642+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'), [42001-232]
+2025-11-03 12:38:21.085621+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG') [42001-232]
+2025-11-03 12:38:21.093599+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera_coche (carreras_id, coche_id) VALUES [42001-232]
+2025-11-03 12:38:21.101578+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 1), [42001-232]
+2025-11-03 12:38:21.108559+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 2), [42001-232]
+2025-11-03 12:38:21.115541+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 1), [42001-232]
+2025-11-03 12:38:21.122523+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 2), [42001-232]
+2025-11-03 12:38:21.129503+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 1), [42001-232]
+2025-11-03 12:38:21.136485+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 2) [42001-232]
+2025-11-03 12:42:07.278172+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:42:07.299050+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen') [42001-232]
+2025-11-03 12:42:07.313014+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:42:07.319994+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso') [42001-232]
+2025-11-03 12:42:07.327973+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES [42001-232]
+2025-11-03 12:42:07.336983+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Motor', 8, 1, 0.87, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Motor', 8, 1, 0.87, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Motor', 8, 1, 0.87, 1), [42001-232]
+2025-11-03 12:42:07.344374+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Turbo', 4, 0, 1.0, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Turbo', 4, 0, 1.0, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Turbo', 4, 0, 1.0, 1), [42001-232]
+2025-11-03 12:42:07.354346+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Batería', 4, 2, 0.5, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Batería', 4, 2, 0.5, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Batería', 4, 2, 0.5, 2), [42001-232]
+2025-11-03 12:42:07.361328+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Caja de Cambios', 5, 0, 1.0, 2) [42001-232]
+2025-11-03 12:42:07.368309+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera (id, nombre, fecha, imagen) VALUES [42001-232]
+2025-11-03 12:42:07.375290+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'), [42001-232]
+2025-11-03 12:42:07.383269+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'), [42001-232]
+2025-11-03 12:42:07.390251+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG') [42001-232]
+2025-11-03 12:42:07.398229+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera_coche (carreras_id, coche_id) VALUES [42001-232]
+2025-11-03 12:42:07.404213+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 1), [42001-232]
+2025-11-03 12:42:07.411194+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 2), [42001-232]
+2025-11-03 12:42:07.417182+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 1), [42001-232]
+2025-11-03 12:42:07.423162+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 2), [42001-232]
+2025-11-03 12:42:07.431141+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 1), [42001-232]
+2025-11-03 12:42:07.437125+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 2) [42001-232]
+2025-11-03 12:43:33.013709+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:43:33.027384+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen') [42001-232]
+2025-11-03 12:43:33.037402+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:43:33.043341+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso') [42001-232]
+2025-11-03 12:43:33.052323+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES [42001-232]
+2025-11-03 12:43:33.059300+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Motor', 8, 1, 0.87, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Motor', 8, 1, 0.87, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Motor', 8, 1, 0.87, 1), [42001-232]
+2025-11-03 12:43:33.065283+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Turbo', 4, 0, 1.0, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Turbo', 4, 0, 1.0, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Turbo', 4, 0, 1.0, 1), [42001-232]
+2025-11-03 12:43:33.075284+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Batería', 4, 2, 0.5, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Batería', 4, 2, 0.5, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Batería', 4, 2, 0.5, 2), [42001-232]
+2025-11-03 12:43:33.081240+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Caja de Cambios', 5, 0, 1.0, 2) [42001-232]
+2025-11-03 12:43:33.093209+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera (id, nombre, fecha, imagen) VALUES [42001-232]
+2025-11-03 12:43:33.100190+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'), [42001-232]
+2025-11-03 12:43:33.112157+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'), [42001-232]
+2025-11-03 12:43:33.120931+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG') [42001-232]
+2025-11-03 12:43:33.130881+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera_coche (carreras_id, coche_id) VALUES [42001-232]
+2025-11-03 12:43:33.140854+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 1), [42001-232]
+2025-11-03 12:43:33.146839+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 2), [42001-232]
+2025-11-03 12:43:33.154837+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 1), [42001-232]
+2025-11-03 12:43:33.160802+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 2), [42001-232]
+2025-11-03 12:43:33.167783+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 1), [42001-232]
+2025-11-03 12:43:33.175761+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 2) [42001-232]
+2025-11-03 12:44:00.900704+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:44:00.915635+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen') [42001-232]
+2025-11-03 12:44:00.925608+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 12:44:00.932590+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso') [42001-232]
+2025-11-03 12:44:00.942563+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES [42001-232]
+2025-11-03 12:44:00.949572+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Motor', 8, 1, 0.87, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Motor', 8, 1, 0.87, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Motor', 8, 1, 0.87, 1), [42001-232]
+2025-11-03 12:44:00.959517+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Turbo', 4, 0, 1.0, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Turbo', 4, 0, 1.0, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Turbo', 4, 0, 1.0, 1), [42001-232]
+2025-11-03 12:44:00.970488+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Batería', 4, 2, 0.5, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Batería', 4, 2, 0.5, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Batería', 4, 2, 0.5, 2), [42001-232]
+2025-11-03 12:44:00.981459+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Caja de Cambios', 5, 0, 1.0, 2) [42001-232]
+2025-11-03 12:44:00.990436+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera (id, nombre, fecha, imagen) VALUES [42001-232]
+2025-11-03 12:44:00.997416+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'), [42001-232]
+2025-11-03 12:44:01.007794+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'), [42001-232]
+2025-11-03 12:44:01.015772+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG') [42001-232]
+2025-11-03 12:44:01.024750+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera_coche (carreras_id, coche_id) VALUES [42001-232]
+2025-11-03 12:44:01.032736+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 1), [42001-232]
+2025-11-03 12:44:01.041850+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 2), [42001-232]
+2025-11-03 12:44:01.047833+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 1), [42001-232]
+2025-11-03 12:44:01.055813+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 2), [42001-232]
+2025-11-03 12:44:01.061796+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 1), [42001-232]
+2025-11-03 12:44:01.068794+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 2) [42001-232]
+2025-11-03 13:08:27.144181+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 13:08:27.164120+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Red Bull RB20', 'https://upload.wikimedia.org/wikipedia/commons/d/d6/2022_Miami_GP_-_Red_Bull_RB18_of_Sergio_P%C3%A9rez.jpg', 'Max Verstappen') [42001-232]
+2025-11-03 13:08:27.173301+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO coche (id, modelo, imagen, piloto) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO coche (id, modelo, imagen, piloto) VALUES [42001-232]
+2025-11-03 13:08:27.184271+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Alpine A522', 'https://img.genial.ly/57c53c241f0adb11c0b9f35c/dcfc28bd-3504-45d6-9606-955750bb96db.jpeg', 'Fernando Alonso') [42001-232]
+2025-11-03 13:08:27.196288+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO componente (tipo, limite_usos, veces_usado, estado, coche_id) VALUES [42001-232]
+2025-11-03 13:08:27.210215+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Motor', 8, 1, 0.87, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Motor', 8, 1, 0.87, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Motor', 8, 1, 0.87, 1), [42001-232]
+2025-11-03 13:08:27.218182+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Turbo', 4, 0, 1.0, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Turbo', 4, 0, 1.0, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Turbo', 4, 0, 1.0, 1), [42001-232]
+2025-11-03 13:08:27.229151+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Batería', 4, 2, 0.5, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Batería', 4, 2, 0.5, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Batería', 4, 2, 0.5, 2), [42001-232]
+2025-11-03 13:08:27.241121+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Caja de Cambios', 5, 0, 1.0, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Caja de Cambios', 5, 0, 1.0, 2) [42001-232]
+2025-11-03 13:08:27.252090+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera (id, nombre, fecha, imagen) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera (id, nombre, fecha, imagen) VALUES [42001-232]
+2025-11-03 13:08:27.265056+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Gran Premio de Bahréin', '2025-03-02', 'https://de1.sportal365images.com/process/smp-bet365-images/news.bet365.com-br/01032023/aac55af1-a5ea-4db3-8e38-18c78ace58d8.jpg'), [42001-232]
+2025-11-03 13:08:27.276070+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Gran Premio de España', '2025-05-11', 'https://hips.hearstapps.com/hmg-prod/images/espan-a-mesa-de-trabajo-1-67b86e0891f96.png?resize=980:*'), [42001-232]
+2025-11-03 13:08:27.285002+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Gran Premio de Mónaco', '2025-05-25', 'https://www.f1cfa.com/images/post/C06-MONACO.JPG') [42001-232]
+2025-11-03 13:08:27.293978+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO carrera_coche (carreras_id, coche_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO carrera_coche (carreras_id, coche_id) VALUES [42001-232]
+2025-11-03 13:08:27.302954+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 1), [42001-232]
+2025-11-03 13:08:27.310934+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 2), [42001-232]
+2025-11-03 13:08:27.318911+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 1), [42001-232]
+2025-11-03 13:08:27.326890+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 2), [42001-232]
+2025-11-03 13:08:27.334869+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 1), [42001-232]
+2025-11-03 13:08:27.344843+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 2) [42001-232]

@@ -1,8 +1,6 @@
 package com.salesianosTriana.dam.gonzalodiosEscuderia.servicios;
 
 import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -13,7 +11,6 @@ import com.salesianosTriana.dam.gonzalodiosEscuderia.repositorios.CocheRepositor
 @Service
 public class CocheService {
    private final CocheRepositorio repo;
-
    public CocheService(CocheRepositorio repo) {
        this.repo = repo;
    }
@@ -22,24 +19,30 @@ public class CocheService {
         return repo.findAll();
     }
 
-    //Metodo para ver si un coche esta listo, si mas de el 75 de los componentes esta por debajo del 50% no lo esta
-    public boolean  estadoCoches(Long id){
-        Coche coche = repo.findById(id).orElse(null);
-        if (coche == null || coche.getComponentes() == null || coche.getComponentes().isEmpty()) {
-            return false;
-        }
+   
+    public Coche buscarPorId(Long id){
+        return repo.findAll().stream()
+        .filter(n -> n.getId() == id)
+        .toList()
+        .getFirst();
+    }
 
-        double componentesMalos = 0;
-        componentesMalos =    coche.getComponentes().stream()
-        .filter(n -> n.getEstado()<50)
-        .collect(Collectors.toList())
-        .size();
-
-        double porcentajeMalos = (componentesMalos * 100.0) / coche.getComponentes().size();
-        if (porcentajeMalos > 75){
-            return false;
-        } else {
-            return true;
+    public String estadoCoche(Long id){
+        double desgasteComponentes = 0;
+        double desgasteTotal;
+        String estado;
+        List<Componente> componentes  = buscarPorId(id).getComponentes();
+        for(Componente componente : componentes){
+            desgasteComponentes+= componente.getEstado();
         }
+        desgasteTotal = desgasteComponentes/componentes.size();
+        return desgasteTotal <=  30 ?  "Bueno"
+        : desgasteTotal > 30 && desgasteTotal < 60 ? "Regular"
+        : "Mal";
+
+        
+    }
+    public void agregarCoche(Coche coche){
+        repo.save(coche);
     }
 }

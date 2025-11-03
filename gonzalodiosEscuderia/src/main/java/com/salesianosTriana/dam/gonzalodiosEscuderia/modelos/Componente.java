@@ -25,6 +25,7 @@ public class Componente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    private String nombre;
     private String tipo;
     private long limiteUsos;
     private long vecesUsado;

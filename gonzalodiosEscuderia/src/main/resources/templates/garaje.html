@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Garaje - ' + ${coche.modelo}">Garaje - Detalles del Coche</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        .card-componente-footer {
+            min-height: 48px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Estilos para el nuevo menú lateral */
+        .sidebar-link {
+            transition: all 0.2s;
+            border-radius: 5px;
+            /* Texto en mayúsculas como en F1 */
+            text-transform: uppercase; 
+            font-size: 0.9rem;
+        }
+        .sidebar-link.active {
+            background-color: #ffc107 !important; /* Amarillo activo */
+            color: #212529 !important; 
+            font-weight: bold;
+        }
+        .sidebar-link:hover:not(.active) {
+            background-color: #6c757d; /* Gris tenue al pasar el ratón */
+            color: #fff !important;
+        }
+        .list-group-flush .list-group-item {
+            border-width: 0 0 1px 0; /* Solo borde inferior */
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-light" style="background: url('/images/fondo.jpg') center/cover fixed no-repeat;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black bg-opacity-75 fixed-top shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-warning" href="#">🏎️ Escudería F1</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/dashboard}">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/garaje}">Garaje</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/almacen}">Almacén</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/carreras}">Carreras</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-5 mt-5">
+
+        <h1 class="fw-bolder text-warning display-4 mb-4 ps-3" th:text="${coche.modelo}">Detalles del Coche</h1>
+        <hr class="border-warning opacity-75">
+        
+        <div class="row g-4">
+            
+            <div class="col-lg-3">
+                <div class="card bg-black border-warning shadow-lg">
+                    
+                    <div class="card-header bg-black text-warning fw-bold d-flex justify-content-between align-items-center border-bottom border-warning">
+                        Lista de Coches 📋
+                        <a th:href="@{/coche/nuevo}" class="btn btn-sm btn-success fw-bold">
+                            + Añadir
+                        </a>
+                    </div>
+                    
+                    <div class="card-body p-2">
+                        <div class="list-group list-group-flush">
+                            <a th:each="car : ${coches}" 
+                               th:href="@{/garaje/{id}(id=${car.id})}" 
+                               th:text="${car.modelo}"
+                               class="list-group-item list-group-item-action bg-dark text-light border-warning border-opacity-25 sidebar-link"
+                               th:classappend="${car.id == coche.id} ? 'active'"
+                            >
+                                Modelo del Coche
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                
+                <section class="mb-5">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="card bg-black border-warning h-100 shadow-lg overflow-hidden">
+                                <img th:src="${coche.imagen}" class="card-img-top object-fit-cover" style="height: 400px;" alt="Imagen del coche">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card bg-black border-warning h-100 shadow-lg p-3">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h2 class="card-title text-warning mb-4"><span th:text="${coche.modelo}">Modelo del Coche</span></h2>
+                                        <a th:href="@{/coche/editar/{id}(id=${coche.id})}" class="btn btn-sm btn-outline-warning fw-bold ms-3">
+                                            ✏️ Editar Info
+                                        </a>
+                                    </div>
+                                    
+                                    <ul class="list-group list-group-flush mb-4">
+                                        <li class="list-group-item bg-dark text-light border-warning border-opacity-50">
+                                            <span class="fw-bold text-warning">ID:</span> <span th:text="${coche.id}"></span>
+                                        </li>
+                                        <li class="list-group-item bg-dark text-light border-warning border-opacity-50">
+                                            <span class="fw-bold text-warning">Piloto:</span> 
+                                            <span class="lead fw-semibold" th:text="${coche.piloto != null ? coche.piloto : 'Sin Piloto Asignado'}"></span>
+                                        </li>
+                                        <li class="list-group-item bg-dark text-light border-warning border-opacity-50">
+                                            <span class="fw-bold text-warning">Estado Actual:</span>
+                                            <span class="badge fs-6 p-2" th:classappend="${estadoCoche == 'OPTIMO' ? 'bg-success' : (estadoCoche == 'ADECUADO' ? 'bg-info text-dark' : 'bg-danger')}" th:text="${estadoCoche}">ESTADO</span>
+                                        </li>
+                                    
+                                        <li class="list-group-item bg-dark text-light border-warning border-opacity-50">
+                                            <span class="fw-bold text-warning">Potencia (CV):</span> <span th:text="${coche.potencia}"></span>
+                                        </li>
+                                      
+                                    </ul>
+                                    
+                                    <div class="d-grid gap-2">
+                                        <a th:href="@{/coche/revisar/{id}(id=${coche.id})}" class="btn btn-primary fw-bold shadow">
+                                            🔍 Revisión Técnica Completa
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-warning opacity-75">
+
+                <section class="mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom border-warning pb-2">
+                        <h2 class="text-warning mb-0">Componentes Instalados 🛠️</h2>
+                        <a th:href="@{/componente/gestionar/{id}(id=${coche.id})}" class="btn btn-warning fw-bold">
+                            🔧 Gestionar Componentes
+                        </a>
+                    </div>
+
+                    <div class="row g-4 justify-content-start">
+                        <div class="col-md-6 col-xl-4" th:each="componente : ${componentesCoche}">
+                            <div class="card bg-black border-info h-100 shadow-lg text-start overflow-hidden">
+                                <div class="card-body">
+                                    <h5 class="card-title text-info fw-bold mb-1" th:text="${componente.tipo}">Tipo Componente</h5>
+                                    <small class="text-secondary">ID: <span th:text="${componente.id}"></span></small>
+                                 
+                                    
+                                    <p class="text-light mb-1">Usos:</p>
+                                    <div class="progress" role="progressbar" style="height: 20px;">
+                                        <div class="progress-bar fw-bold"
+                                             th:classappend="${(componente.vecesUsado / componente.limiteUsos) * 100 > 80 ? 'bg-danger' : ((componente.vecesUsado / componente.limiteUsos) * 100 > 50 ? 'bg-warning text-dark' : 'bg-success')}"
+                                             th:style="'width: ' + ((${componente.vecesUsado} * 100) / ${componente.limiteUsos}) + '%'"
+                                             th:text="${componente.vecesUsado} + ' / ' + ${componente.limiteUsos} + ' usos'">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-info text-dark text-center card-componente-footer">
+                                    <a th:href="@{/almacen/{id}(id=${componente.id})}" class="btn btn-dark btn-sm fw-bold">Detalles del Ítem</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info text-center mt-4" role="alert" th:if="${#lists.isEmpty(componentesCoche)}">
+                        ℹ️ Este coche está en chasis, no tiene componentes instalados.
+                    </div>
+                </section>
+
+                <hr class="border-warning opacity-75">
+
+                <section class="mb-5">
+                    <h2 class="text-center text-warning mb-4 border-bottom border-warning pb-2">Historial de Carreras</h2>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-6 col-xl-4" th:each="carrera : ${carreras}">
+                            <div class="card bg-black border-warning text-white h-100 shadow-lg overflow-hidden">
+                                <img th:src="${carrera.imagen}" class="card-img object-fit-cover" style="height: 200px; filter: brightness(0.7);" alt="Imagen de la carrera">
+                                
+                                <div class="card-img-overlay d-flex flex-column justify-content-end p-3">
+                                    <span class="badge bg-warning text-dark mb-1 p-2">
+                                        🗓️ <span th:text="${#dates.format(carrera.fecha, 'dd/MM/yyyy')}"></span>
+                                    </span>
+                                    <h5 class="card-title fw-bolder text-shadow mb-1" th:text="${carrera.nombre}">Nombre de la Carrera</h5>
+                                    <p class="card-text text-shadow">
+                                    </p>
+                                    <a th:href="@{/carreras/{id}(id=${carrera.id})}" class="btn btn-sm btn-outline-warning mt-2 align-self-start">Ver Detalles 🏁</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-warning text-center mt-4" role="alert" th:if="${#lists.isEmpty(carreras)}">
+                        🏎️ Este coche aún no ha participado en ninguna carrera.
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
