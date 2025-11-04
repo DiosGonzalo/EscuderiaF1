@@ -10,19 +10,17 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Carrera;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Coche;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Componente;
+import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.TipoComponente;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.CarreraService;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.CocheService;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.ComponenteService;
-import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.base.ServiciosBase;
-
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 
@@ -97,14 +95,11 @@ public class CocheController {
     @GetMapping("/garaje/nuevo")
     public String crearCoche(Model model) {
         
+        model.addAttribute("tipos", TipoComponente.values());
 
-        List<String> tipos = List.of(
-        "Motor", "Turbo", "Bateria", "Caja de Cambios", "Neumaticos", 
-        "Aleron", "Paragolpes", "Suspension", "Direccion");
 
         List<Componente> componentes = componenteService.componentesSinCoche();
         model.addAttribute("componentes",componentes );
-        model.addAttribute("tipos", tipos ); // ¡Añadimos la lista al modelo!
         model.addAttribute("coche", new Coche());
         return "agregarCoche";
     }
@@ -115,7 +110,7 @@ public class CocheController {
 
 
         List<Componente>componenteSeleccionado = componenteIds.stream()
-        .map(id -> componenteService.findById(id).orElse(null))
+        .map(id -> componenteService.findById(id))
         .filter(n -> n != null)
         .collect(Collectors.toList());
         coche.setComponentes(componenteSeleccionado);
@@ -130,8 +125,6 @@ public class CocheController {
             return "agregarCoche";
 
         }
-
-
 
         try{
             coche.setPotencia(cocheService.calcularCaballos(coche));

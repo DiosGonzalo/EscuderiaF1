@@ -3,7 +3,6 @@ package com.salesianosTriana.dam.gonzalodiosEscuderia.servicios;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -71,8 +70,8 @@ public class ComponenteService {
         .toList();
     }
 
-    public Optional<Componente> findById(Long id){
-        return repo.findById(id);
+    public Componente findById(Long id){
+        return repo.findById(id).orElse(null);
     }
 
 }

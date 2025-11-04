@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Coche;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Componente;
+import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.TipoComponente;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.repositorios.CocheRepositorio;
 
 @Service
@@ -55,15 +56,15 @@ public class CocheService {
             caballos += componente.getCaballos();
         }
         return caballos;
-    }
     public boolean comprobarRepetirComponentes( Coche coche){
         List<Componente> componentes = coche.getComponentes();
     
-        Set<String> tiposUnicos = componentes.stream()
+        Set<TipoComponente> tiposUnicos = componentes.stream()
         .map(Componente::getTipo) 
         .collect(Collectors.toSet()); 
 
         return tiposUnicos.size() != componentes.size();
+    }
     }
     
 

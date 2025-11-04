@@ -39,16 +39,38 @@ INSERT INTO componente (nombre, tipo, limite_usos, veces_usado, estado, caballos
     ('Suspensión Doble Horquilla', 'Suspension', 10, 3, 0.7, 0.0, 2),
     ('Dirección Hidráulica Espec.', 'Direccion', 50, 0, 1.0, 0.0, 2),
     
-    -- Componentes en el Almacén (coche_id = NULL) - HAY UN COMPONENTE DE CADA UNO DE LOS 9 TIPOS
+    -- Componentes en el Almacén (Existentes)
     ('Motor Ferrari PU24', 'Motor', 8, 0, 1.0, 155.0, NULL), 
     ('Turbo Compresor Spare', 'Turbo', 4, 0, 1.0, 25.0, NULL),
     ('Batería Auxiliar', 'Bateria', 4, 0, 1.0, 8.0, NULL),
-    ('Caja Secuencial Almacen', 'Caja de Cambios', 10, 0, 1.0, 0.0, NULL), -- Nuevo
+    ('Caja Secuencial Almacen', 'Caja de Cambios', 10, 0, 1.0, 0.0, NULL), 
     ('Neumáticos Pirelli Intermedios', 'Neumaticos', 1, 0, 1.0, 2.2, NULL),
     ('Alerón Trasero Estándar', 'Aleron', 20, 0, 1.0, 3.0, NULL),
-    ('Paragolpes Delantero Base', 'Paragolpes', 50, 0, 1.0, 0.0, NULL), -- Nuevo
+    ('Paragolpes Delantero Base', 'Paragolpes', 50, 0, 1.0, 0.0, NULL), 
     ('Suspensión de Recambio', 'Suspension', 10, 0, 1.0, 0.0, NULL),
-    ('Dirección Asistida Estandar', 'Direccion', 50, 0, 1.0, 0.0, NULL); -- Nuevo
+    ('Dirección Asistida Estandar', 'Direccion', 50, 0, 1.0, 0.0, NULL),
+    
+    -- Componentes en el Almacén (NUEVOS: 20 más)
+    ('Motor Mercedes-AMG PU24', 'Motor', 8, 0, 1.0, 148.0, NULL), 
+    ('MGU-H Recuperador de Calor', 'MGU-H', 4, 0, 1.0, 5.0, NULL),
+    ('MGU-K Recuperador Cinético', 'MGU-K', 4, 0, 1.0, 20.0, NULL),
+    ('Unidad de Control Electrónico (ECU)', 'Unidad de Control', 4, 0, 1.0, 0.0, NULL),
+    ('Turbo Compresor de Alto Flujo', 'Turbo', 4, 0, 1.0, 27.0, NULL),
+    ('Batería ESS de Larga Duración', 'Bateria', 4, 0, 1.0, 9.5, NULL),
+    ('Caja de Cambios Secuencial GT', 'Caja de Cambios', 10, 0, 1.0, 0.0, NULL),
+    ('Embrague de Carbono Multidisco', 'Embrague', 50, 0, 1.0, 0.0, NULL),
+    ('Eje de Transmisión Reforzado', 'Eje Transmisión', 50, 0, 1.0, 0.0, NULL),
+    ('Neumáticos Pirelli Lluvia', 'Neumaticos', 1, 0, 1.0, 1.5, NULL),
+    ('Alerón Delantero de Bajo Drag', 'Aleron', 20, 0, 1.0, 3.5, NULL),
+    ('Alerón Trasero DRS Activo', 'Aleron', 20, 0, 1.0, 4.0, NULL),
+    ('Difusor Venturi Extendido', 'Paragolpes', 50, 0, 1.0, 0.0, NULL),
+    ('Frenos de Carbono Cerámico', 'Frenos', 50, 0, 1.0, 0.0, NULL),
+    ('Conductos de Freno Ventilados', 'Frenos', 50, 0, 1.0, 0.0, NULL),
+    ('Suspensión Push-Rod de Competición', 'Suspension', 10, 0, 1.0, 0.0, NULL),
+    ('Triángulos de Suspensión (Wishbones)', 'Suspension', 50, 0, 1.0, 0.0, NULL),
+    ('Power Steering Avanzada (Torque Sensor)', 'Direccion', 50, 0, 1.0, 0.0, NULL),
+    ('Chasis Monocasco de Fibra', 'Chasis', 1, 0, 1.0, 0.0, NULL),
+    ('Extintor Automático (Sistema de Seguridad)', 'Seguridad', 50, 0, 1.0, 0.0, NULL);
 
 -- ------------------------------------------------------------------
 -- 3. INSERTS DE CARRERAS (Carrera: 3 Entidades)

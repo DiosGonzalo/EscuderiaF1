@@ -2,6 +2,8 @@ package com.salesianosTriana.dam.gonzalodiosEscuderia.modelos;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,7 +28,8 @@ public class Componente {
     private long id;
 
     private String nombre;
-    private String tipo;
+    @Enumerated(EnumType.STRING)
+    private TipoComponente tipo;
     private long limiteUsos;
     private long vecesUsado;
     private double estado;
