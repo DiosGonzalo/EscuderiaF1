@@ -82,7 +82,7 @@
 
         <div class="row g-4">
 
-            <div class="col-sm-6 col-md-4 col-lg-3" th:each="comp : ${componente}" th:if="${comp.tipo.equalsIgnoreCase(tipo)}">
+            <div class="col-sm-6 col-md-4 col-lg-3" th:each="comp : ${componente}" th:if="${comp.tipo.name().equalsIgnoreCase(tipo)}">
                 <div class="card bg-black border-warning h-100 shadow text-start">
                     <div class="card-header bg-warning text-dark fw-bold d-flex justify-content-between align-items-center">
                         <span th:text="${comp.nombre}">Nombre Componente</span>

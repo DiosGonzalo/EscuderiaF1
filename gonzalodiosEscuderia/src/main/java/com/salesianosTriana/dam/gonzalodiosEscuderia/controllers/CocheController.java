@@ -1,5 +1,6 @@
 package com.salesianosTriana.dam.gonzalodiosEscuderia.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,6 +22,8 @@ import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.TipoComponente;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.CarreraService;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.CocheService;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.ComponenteService;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -75,6 +78,9 @@ public class CocheController {
 
         List<Coche> coches = cocheService.listaCompleta();
         model.addAttribute("coches", coches);
+
+        List<Componente> todosComponentes = componenteService.listaComponentes();
+        model.addAttribute("componente", todosComponentes);  
 
         List<Componente> componentes = componenteService.componentesCoche(cocheService.buscarPorId(id));
         model.addAttribute("componentesCoche",componentes);
@@ -137,10 +143,86 @@ public class CocheController {
             return "redirect:/garaje/nuevo";
         }
 
+        
     }
     
-   
-    
+        @GetMapping("/garaje/editar/{id}")
+        public String editarCoche(@PathVariable Long id, Model model){
+            Coche coche = cocheService.buscarPorId(id);
+            if (coche == null){
+                return ("redirect:/garaje");
+            }
+            
+            model.addAttribute( "coche", coche);
+
+            return "coche/editar/{id}";
+        }
+        
+        @PostMapping("/coche/editar/{id}/guardar")
+        public String editarCoche(@ModelAttribute("coche") Coche coche) {
+            
+            cocheService.agregarCoche(coche);
+
+            return "redirect:/garaje/{id}";
+        }
+
+        @GetMapping("/error")
+        public String error(@RequestParam String param) {
+            return new String();
+        }
+        
+
+        @GetMapping("/coche/componentes/editar/{id}")
+        public String gestionarComponentes(@PathVariable Long id, Model model) {
+            Coche coche = cocheService.buscarPorId(id);
+            model.addAttribute("coche", coche);
+            List<Componente> componentes = componenteService.listaComponentes();
+            model.addAttribute("componentes", componentes);
+            model.addAttribute("showComponentModal", true); 
+                return "garaje/detalle";
+        }
+
+        @PostMapping("/componente/gestionar/{id}/guardar")
+        public String gestionarComponentes(@PathVariable Long id, @RequestParam(value = "componenteIds", required = false) List<Long> componenteIds, 
+        RedirectAttributes redirectAttributes ) {
+        
+          try{
+            Coche coche = cocheService.buscarPorId(id);
+            if(coche == null){
+                redirectAttributes.addFlashAttribute("errorComponentes","No se ha encontrado el coche");
+                return "redirect:/garaje/{id}";
+            }
+
+            
+
+            List<Componente> nuevosComponentes = new ArrayList<>();
+            if( componenteIds != null && !componenteIds.isEmpty()){
+                nuevosComponentes = componenteService.crearListaConIds(componenteIds);
+                nuevosComponentes = cocheService.comprobarNuevosNulo(nuevosComponentes);
+            }
+
+
+            if(cocheService.comprobarRepetirComponentes(coche)){
+                redirectAttributes.addFlashAttribute("errorComponentes", "No se puede repetir un componente");
+                redirectAttributes.addFlashAttribute("showComponentModal",true);
+                return "redirect:/garaje/{id}";
+            }
+
+            cocheService.reemplazarComponentes(coche, nuevosComponentes);
+
+            coche.setPotencia(cocheService.calcularCaballos(coche));
+            cocheService.guardar(coche);
+
+            redirectAttributes.addFlashAttribute("exitoComponentes","Componente actuzalizados con exito");
+            }catch(Exception e){
+                redirectAttributes.addFlashAttribute("errorComponentes", "Error al actualizar los componentes" + e.getMessage());
+                redirectAttributes.addFlashAttribute("showComponentModal", true);
+             }
+            return "redirect:/garaje/{id}";
+        }
+        
+        
+        
 
 
 

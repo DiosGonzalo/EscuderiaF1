@@ -104,9 +104,9 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start">
                                         <h2 class="card-title text-warning mb-4"><span th:text="${coche.modelo}">Modelo del Coche</span></h2>
-                                        <a th:href="@{/coche/editar/{id}(id=${coche.id})}" class="btn btn-sm btn-outline-warning fw-bold ms-3">
+                                        <button type="button" class="btn btn-sm btn-outline-warning fw-bold ms-3" data-bs-toggle="modal" data-bs-target="#modalEditarCoche">
                                             ✏️ Editar Info
-                                        </a>
+                                        </button>
                                     </div>
                                     
                                     <ul class="list-group list-group-flush mb-4">
@@ -144,9 +144,9 @@
                 <section class="mb-5">
                     <div class="d-flex justify-content-between align-items-center mb-4 border-bottom border-warning pb-2">
                         <h2 class="text-warning mb-0">Componentes Instalados 🛠️</h2>
-                        <a th:href="@{/componente/gestionar/{id}(id=${coche.id})}" class="btn btn-warning fw-bold">
+                        <button type="button" class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#modalGestionarComponentes">
                             🔧 Gestionar Componentes
-                        </a>
+                        </button>
                     </div>
 
                     <div class="row g-4 justify-content-start">
@@ -210,6 +210,118 @@
 
     </div>
 
+    <!-- MODAL EDITAR COCHE -->
+    <div class="modal fade" id="modalEditarCoche" tabindex="-1" aria-labelledby="modalEditarCocheLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark border-warning text-light">
+                <div class="modal-header border-warning">
+                    <h5 class="modal-title text-warning" id="modalEditarCocheLabel">✏️ Editar Coche: <span th:text="${coche.modelo}"></span></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <form th:action="@{/coche/editar/{id}/guardar(id=${coche.id})}" method="post" th:object="${coche}">
+                    
+                    <div class="modal-body">
+                        
+                        <input type="hidden" th:field="*{id}">
+                        
+                        <div class="mb-3">
+                            <label for="piloto" class="form-label text-warning">Piloto Asignado</label>
+                            <input type="text" class="form-control bg-black text-light border-warning" id="piloto" th:field="*{piloto}" placeholder="Nombre del Piloto">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="modelo" class="form-label text-warning">Modelo del Coche</label>
+                            <input type="text" class="form-control bg-black text-light border-warning" id="modelo" th:field="*{modelo}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="imagen" class="form-label text-warning">URL de la Imagen</label>
+                            <input type="url" class="form-control bg-black text-light border-warning" id="imagen" th:field="*{imagen}">
+                        </div>
+                        
+                        <div th:if="${#fields.hasErrors('modelo')}" class="alert alert-danger" role="alert" th:errors="*{modelo}">Error en el modelo</div>
+                        
+                    </div>
+                    
+                    <div class="modal-footer border-warning">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-warning fw-bold">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL GESTIONAR COMPONENTES -->
+    <div class="modal fade" id="modalGestionarComponentes" tabindex="-1" aria-labelledby="modalGestionarComponentesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark border-warning text-light">
+                <div class="modal-header border-warning">
+                    <h5 class="modal-title text-warning" id="modalGestionarComponentesLabel">🔧 Gestionar Componentes para <span th:text="${coche.modelo}"></span></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <form th:action="@{/componente/gestionar/{id}/guardar(id=${coche.id})}" method="post" id="formGestionarComponentes">
+                    
+                    <div class="modal-body">
+                        <p class="text-info">Selecciona todos los componentes que deseas instalar. Los componentes ya instalados se muestran marcados.</p>
+                        
+                        <div th:if="${errorComponentes}" class="alert alert-danger mt-3" role="alert" th:text="${errorComponentes}">Error de validación</div>
+
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-4" th:each="comp : ${componente}">
+                                <div th:if="${comp.coche == null or comp.coche.id == coche.id}" class="form-check form-switch bg-black p-3 border border-secondary rounded shadow-sm">
+                                    <input class="form-check-input" 
+                                           type="checkbox" 
+                                           role="switch" 
+                                           th:id="'comp-' + ${comp.id}" 
+                                           name="componenteIds" 
+                                           th:value="${comp.id}"
+                                           th:attr="data-component-id=${comp.id}"
+                                           th:checked="${comp.coche != null and comp.coche.id == coche.id}">
+                                    
+                                    <label class="form-check-label ms-2" th:for="'comp-' + ${comp.id}">
+                                        <strong th:text="${comp.nombre}">Nombre Componente</strong>
+                                        <small class="d-block text-warning" th:text="'Tipo: ' + ${comp.tipo}"></small>
+                                        <small class="d-block text-secondary">Usos: <span th:text="${comp.vecesUsado} + '/' + ${comp.limiteUsos}"></span></small>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="modal-footer border-warning">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-warning fw-bold">Guardar Configuración</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALERTAS DE ÉXITO Y ERROR -->
+    <div th:if="${exitoEdicion}" class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <span th:text="${exitoEdicion}"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    <div th:if="${errorEdicion} and ${errorEdicion != 'true'}" class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <span th:text="${errorEdicion}"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script th:if="${showComponentModal}">
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = new bootstrap.Modal(document.getElementById('modalGestionarComponentes'));
+            modal.show();
+        });
+    </script>
 </body>
 </html>

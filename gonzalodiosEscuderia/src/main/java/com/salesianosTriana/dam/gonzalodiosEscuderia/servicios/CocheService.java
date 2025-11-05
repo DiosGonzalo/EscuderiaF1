@@ -1,5 +1,6 @@
 package com.salesianosTriana.dam.gonzalodiosEscuderia.servicios;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -56,6 +57,7 @@ public class CocheService {
             caballos += componente.getCaballos();
         }
         return caballos;
+    }
     public boolean comprobarRepetirComponentes( Coche coche){
         List<Componente> componentes = coche.getComponentes();
     
@@ -65,10 +67,55 @@ public class CocheService {
 
         return tiposUnicos.size() != componentes.size();
     }
-    }
+    
     
 
     public void guardar(Coche coche){
         repo.save(coche);
     }
+
+    public void guardarComponentes(List<Componente> componentes, Coche coche){
+        coche.setComponentes(componentes);
+    }   
+    public void reemplazarComponentes(Coche coche, List<Componente> nuevosComponentes){
+        if(coche.getComponentes() != null && !coche.getComponentes().isEmpty()){
+
+            List<Componente> copia = new ArrayList<>(coche.getComponentes());
+            copia.forEach(c -> c.setCoche(null));
+            coche.getComponentes().clear();
+        }
+
+         if(nuevosComponentes != null && !nuevosComponentes.isEmpty()){
+            nuevosComponentes.forEach(n ->{
+            n.setCoche(coche);
+            coche.getComponentes().add(n);
+            
+            });
+         }
+    }
+
+
+    
+
+    public List<Componente> comprobarNuevosNulo(List<Componente> componentes){
+       
+       
+        return componentes.stream()
+        .filter(n -> n != null)
+        .collect(Collectors.toList());
+
+
+    }
+
+    public void actualizarComponentes(Coche coche, List<Componente> nuevosComponentes){
+        nuevosComponentes.stream()
+        .forEach(n ->{
+            if(!coche.getComponentes().contains(n)){
+            n.setCoche(coche);
+            coche.getComponentes().add(n);
+        }
+        });
+
+    }
 }
+

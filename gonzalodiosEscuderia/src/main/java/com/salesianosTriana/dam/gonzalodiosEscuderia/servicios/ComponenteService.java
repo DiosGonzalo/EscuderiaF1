@@ -74,6 +74,11 @@ public class ComponenteService {
         return repo.findById(id).orElse(null);
     }
 
+    public List<Componente> crearListaConIds(List<Long>componenteIds){
+        return repo.findAllById(componenteIds);
+
+        
+    }
 }
 
 
