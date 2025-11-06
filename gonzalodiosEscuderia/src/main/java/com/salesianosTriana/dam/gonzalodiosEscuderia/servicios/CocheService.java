@@ -2,9 +2,9 @@ package com.salesianosTriana.dam.gonzalodiosEscuderia.servicios;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.Objects;
 
 import org.springframework.stereotype.Service;
 
@@ -78,44 +78,28 @@ public class CocheService {
         coche.setComponentes(componentes);
     }   
     public void reemplazarComponentes(Coche coche, List<Componente> nuevosComponentes){
-        if(coche.getComponentes() != null && !coche.getComponentes().isEmpty()){
+        coche.getComponentes().forEach(c -> c.setCoche(null));
+        coche.getComponentes().clear();
+        nuevosComponentes.forEach(c -> {
+            c.setCoche(coche);
+            coche.getComponentes().add(c);});
 
-            List<Componente> copia = new ArrayList<>(coche.getComponentes());
-            copia.forEach(c -> c.setCoche(null));
-            coche.getComponentes().clear();
-        }
 
-         if(nuevosComponentes != null && !nuevosComponentes.isEmpty()){
-            nuevosComponentes.forEach(n ->{
-            n.setCoche(coche);
-            coche.getComponentes().add(n);
-            
-            });
-         }
     }
-
 
     
 
     public List<Componente> comprobarNuevosNulo(List<Componente> componentes){
-       
-       
-        return componentes.stream()
-        .filter(n -> n != null)
+         if (componentes == null) {
+        return new ArrayList<>();
+    }
+    return componentes.stream()
+        .filter(Objects::nonNull)
         .collect(Collectors.toList());
 
 
     }
 
-    public void actualizarComponentes(Coche coche, List<Componente> nuevosComponentes){
-        nuevosComponentes.stream()
-        .forEach(n ->{
-            if(!coche.getComponentes().contains(n)){
-            n.setCoche(coche);
-            coche.getComponentes().add(n);
-        }
-        });
-
-    }
+    
 }
 

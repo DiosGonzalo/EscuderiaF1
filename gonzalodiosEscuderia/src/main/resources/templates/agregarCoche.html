@@ -91,7 +91,7 @@
                                         <option value="">-- Seleccione un componente --</option>
                                         
                                         <option th:each="comp : ${componentes}"
-                                                th:if="${comp.tipo.equalsIgnoreCase(tipo)}" 
+                                                th:if="${comp.tipo == tipo}" 
                                                 th:value="${comp.id}"
                                                 th:text="${comp.nombre} + ' (+' + ${comp.caballos} + ' CV, ' + ${comp.limiteUsos} + ' usos)'">
                                         </option>

@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 
+
 @Controller
 public class CocheController {
     private final CocheService cocheService;
@@ -192,35 +193,54 @@ public class CocheController {
                 redirectAttributes.addFlashAttribute("errorComponentes","No se ha encontrado el coche");
                 return "redirect:/garaje/{id}";
             }
-
-            
-
-            List<Componente> nuevosComponentes = new ArrayList<>();
-            if( componenteIds != null && !componenteIds.isEmpty()){
-                nuevosComponentes = componenteService.crearListaConIds(componenteIds);
-                nuevosComponentes = cocheService.comprobarNuevosNulo(nuevosComponentes);
+            if (componenteIds == null || componenteIds.isEmpty()) {
+            redirectAttributes.addFlashAttribute("errorComponentes", "Debes seleccionar al menos un componente");
+            redirectAttributes.addFlashAttribute("showComponentModal", true);
+            return "redirect:/garaje/{id}";
             }
+        
+            List<Componente> nuevosComponentes = componenteService.crearListaConIds(componenteIds);
+            nuevosComponentes = cocheService.comprobarNuevosNulo(nuevosComponentes);
 
 
-            if(cocheService.comprobarRepetirComponentes(coche)){
-                redirectAttributes.addFlashAttribute("errorComponentes", "No se puede repetir un componente");
-                redirectAttributes.addFlashAttribute("showComponentModal",true);
+            Coche cocheTemp = new Coche();
+            cocheTemp.setComponentes(nuevosComponentes);
+        
+            if (cocheService.comprobarRepetirComponentes(cocheTemp)) {
+                redirectAttributes.addFlashAttribute("errorComponentes", "No se puede repetir un tipo de componente");
+                redirectAttributes.addFlashAttribute("showComponentModal", true);
                 return "redirect:/garaje/{id}";
             }
 
+            
             cocheService.reemplazarComponentes(coche, nuevosComponentes);
 
             coche.setPotencia(cocheService.calcularCaballos(coche));
+
             cocheService.guardar(coche);
 
-            redirectAttributes.addFlashAttribute("exitoComponentes","Componente actuzalizados con exito");
-            }catch(Exception e){
+            redirectAttributes.addFlashAttribute("exitoComponentes", "Componentes actualizados con éxito");
+
+        }catch(Exception e){
                 redirectAttributes.addFlashAttribute("errorComponentes", "Error al actualizar los componentes" + e.getMessage());
                 redirectAttributes.addFlashAttribute("showComponentModal", true);
              }
             return "redirect:/garaje/{id}";
         }
         
+        
+
+        @PostMapping("/almacen/componente/{id}")
+        public String postMethodName(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
+            try{
+            Componente c =  componenteService.findById(id);
+            model.addAttribute("componente", c);
+            }catch(Exception e){
+                redirectAttributes.addFlashAttribute("errorComponente", "Error al cargar componente" + e.getMessage());
+            }
+
+            return "redirect: detallesComponente";
+        }
         
         
 

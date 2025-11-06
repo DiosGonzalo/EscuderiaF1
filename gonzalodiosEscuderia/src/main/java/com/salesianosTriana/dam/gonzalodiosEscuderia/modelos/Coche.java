@@ -26,7 +26,7 @@ public class Coche {
     @ManyToMany (mappedBy = "coches")
     private List<Carrera> carreras = new ArrayList<>();
 
-    @OneToMany( mappedBy = "coche", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany( mappedBy = "coche", cascade = CascadeType.ALL, orphanRemoval = false)
     @ToString.Exclude
     @Builder.Default
     private List<Componente> componentes = new ArrayList<>();
