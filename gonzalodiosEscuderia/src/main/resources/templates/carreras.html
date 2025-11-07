@@ -54,17 +54,21 @@
                          class="card-img object-fit-cover" 
                          style="height: 200px; filter: brightness(0.6);" 
                          alt="Imagen del Circuito"
-                         onerror="this.onerror=null; this.src='/images/default-race.jpg';"> <div class="card-img-overlay d-flex flex-column justify-content-end p-3">
+                         onerror="this.onerror=null; this.src='/images/default-race.jpg';"> 
+                    
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3">
                         
                         <span class="badge bg-warning text-dark mb-1 p-2">
                             <i class="bi bi-calendar"></i> 
                             <span th:text="${#dates.format(carrera.fecha, 'dd/MM/yyyy')}">DD/MM/YYYY</span>
-                            <span class="ms-2" th:text="${carrera.pais}">País</span> 
                         </span>
                         
                         <h5 class="card-title fw-bolder text-shadow mb-1" th:text="${carrera.nombre}">Nombre de la Carrera</h5>
                         
-                        <p class="card-text text-shadow small mb-2" th:text="'Tipo: ' + ${carrera.circuitoTipo}">Tipo: Permanente</p>
+                        <p class="card-text text-shadow small mb-2">
+                            <i class="bi bi-car-front-fill"></i>
+                            <span th:text="${#lists.size(carrera.coches)} + ' coches inscritos'">0 coches inscritos</span>
+                        </p>
                         
                         <a th:href="@{/carreras/{id}(id=${carrera.id})}" class="btn btn-sm btn-outline-warning mt-2 align-self-start fw-bold">Ver Detalles ➡️</a>
                     </div>

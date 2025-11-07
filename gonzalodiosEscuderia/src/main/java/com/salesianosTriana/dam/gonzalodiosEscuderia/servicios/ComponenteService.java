@@ -2,12 +2,15 @@ package com.salesianosTriana.dam.gonzalodiosEscuderia.servicios;
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Coche;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Componente;
+import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.TipoComponente;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.repositorios.ComponenteRepository;
 
 @Service
@@ -78,6 +81,46 @@ public class ComponenteService {
         return repo.findAllById(componenteIds);
 
         
+    }
+
+
+    public List<Componente> buscarPorNombre(String nombre){
+        return repo.findAll().stream()
+        .filter(n-> n.getNombre().toLowerCase().contains(nombre))
+        .collect(Collectors.toList());
+
+    }
+
+    public List<Componente> filtrarPorTipo(TipoComponente tipo){
+        return repo.findAll().stream()
+        .filter(n -> n.getTipo().equals(tipo))
+        .toList();
+    }
+
+    public List<Componente> ordenarUsosMasMenos(){
+        return repo.findAll().stream()
+        .sorted(Comparator.comparing(Componente::getVecesUsado))
+        .toList();        
+                
+    }
+
+    public List<Componente> ordenarUsosMenosMas(){
+        return repo.findAll().stream()
+        .sorted(Comparator.comparing(Componente::getVecesUsado))
+        .toList().reversed();        
+                
+    }
+
+    public List<Componente> ordenarMejores(){
+    
+        return repo.findAll().stream()
+        .sorted(Comparator.comparing(Componente::getCaballos).reversed()
+        .thenComparing(Componente::getVecesUsado))
+        .collect(Collectors.toList());
+
+    }
+     public Componente buscarPorId(Long id){
+        return repo.findByIdWithCoche(id).orElse(null);
     }
 }
 
