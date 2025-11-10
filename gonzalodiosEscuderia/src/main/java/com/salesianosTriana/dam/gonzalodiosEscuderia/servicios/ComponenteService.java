@@ -122,6 +122,10 @@ public class ComponenteService {
      public Componente buscarPorId(Long id){
         return repo.findByIdWithCoche(id).orElse(null);
     }
+
+    public void eliminar(Long id){
+        repo.deleteById(id);
+    }
 }
 
 

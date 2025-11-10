@@ -17,6 +17,7 @@ import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.ComponenteService
 
 
 
+
 @Controller
 public class ComponenteController {
     ComponenteService componenteService;
@@ -76,12 +77,17 @@ public class ComponenteController {
         Componente componente = componenteService.buscarPorId(id);
         
         if (componente == null) {
-            // Redirigir al almacén si no se encuentra el componente
             return "redirect:/almacen";
         }
         
         model.addAttribute("componente", componente);
         return "infoComponente";
+    }
+    
+    @PostMapping("/almacen/eliminar/{id}")
+    public String eliminarComponente(@RequestParam Long id) {
+        componenteService.eliminar(id);
+        return "almacen";
     }
     
 

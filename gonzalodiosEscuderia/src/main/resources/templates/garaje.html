@@ -191,12 +191,26 @@
                                     <div class="progress mb-2 shadow" role="progressbar" style="height: 22px;">
                                         <div class="progress-bar fw-bold animate__animated animate__slideInLeft"
                                              th:classappend="${(componente.vecesUsado / componente.limiteUsos) * 100 > 80 ? 'bg-danger' : ((componente.vecesUsado / componente.limiteUsos) * 100 > 50 ? 'bg-warning text-dark' : 'bg-success')}"
-                                             th:style="'width: ' + ((${componente.vecesUsado} * 100) / ${componente.limiteUsos}) + '%'"
+                                             th:style="'width: ' + ((${componente.vecesUsado} * 100) / ${componente.limiteUsos}) + '%'
                                              th:text="${componente.vecesUsado} + ' / ' + ${componente.limiteUsos}">
                                         </div>
                                     </div>
-                                    <small class="text-muted">
+                                    <small class="text-muted d-block mb-3">
                                         <i class="bi bi-graph-up"></i> <span th:text="${#numbers.formatDecimal((componente.vecesUsado * 100) / componente.limiteUsos, 1, 1)}"></span>% utilizado
+                                    </small>
+
+                                    <!-- Condición (estado) del componente -->
+                                    <p class="text-light mb-2 fw-semibold" style="font-size: 0.85rem;">Condición:</p>
+                                    <div class="progress mb-2 shadow" style="height: 22px;">
+                                        <div class="progress-bar fw-bold animate__animated animate__slideInLeft"
+                                             th:classappend="${componente.estado >= 0.8 ? 'bg-success' : (componente.estado >= 0.5 ? 'bg-warning text-dark' : 'bg-danger')}"
+                                             role="progressbar"
+                                             th:style="'width: ' + ((${componente.estado} * 100)) + '%'
+                                             " th:text="${#numbers.formatDecimal(componente.estado * 100, 0, 0)} + '%'">
+                                        </div>
+                                    </div>
+                                    <small class="text-muted">
+                                        <i class="bi bi-heart-pulse"></i> Estado: <span th:text="${#numbers.formatDecimal(componente.estado * 100, 0, 0)} + '%'">100%</span>
                                     </small>
                                 </div>
                                 <div class="card-footer bg-info text-dark text-center card-componente-footer border-0">

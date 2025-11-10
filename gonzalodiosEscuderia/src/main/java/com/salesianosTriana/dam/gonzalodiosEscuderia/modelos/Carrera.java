@@ -2,12 +2,13 @@ package com.salesianosTriana.dam.gonzalodiosEscuderia.modelos;
 
 
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -30,6 +31,10 @@ public class Carrera {
     private String nombre;
     private Date fecha;
     private String imagen;
+    @Enumerated(EnumType.STRING)
+    private Dificultad dificultad;
+    private Long numeroVueltas;
+    private String clima;
 
     @ManyToMany (cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinTable(
@@ -38,6 +43,8 @@ public class Carrera {
             inverseJoinColumns = @JoinColumn( name = "coche_id")
     )
     private List<Coche> coches = new ArrayList<>();
+
+    
 
 
 
