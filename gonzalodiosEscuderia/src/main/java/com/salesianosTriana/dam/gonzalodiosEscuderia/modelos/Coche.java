@@ -32,7 +32,4 @@ public class Coche {
     private List<Componente> componentes = new ArrayList<>();
 
 
-
-
-
 }

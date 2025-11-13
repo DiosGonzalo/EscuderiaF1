@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Componente;
-import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.TipoComponente;
+import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Enums.TipoComponente;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.ComponenteService;
 
 

@@ -1,4 +1,4 @@
-package com.salesianosTriana.dam.gonzalodiosEscuderia.modelos;
+package com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Enums;
 
 public enum TipoComponente {
     MOTOR,

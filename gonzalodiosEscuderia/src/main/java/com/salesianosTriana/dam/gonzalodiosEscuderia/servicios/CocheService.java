@@ -4,18 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Coche;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Componente;
-import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.TipoComponente;
+import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Enums.TipoComponente;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.repositorios.CocheRepositorio;
+import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.algoritmos.MejoresCoches;
 
 @Service
 public class CocheService {
    private final CocheRepositorio repo;
+   private final MejoresCoches mejoresCoches;
    public CocheService(CocheRepositorio repo) {
        this.repo = repo;
    }
@@ -98,6 +101,13 @@ public class CocheService {
         .collect(Collectors.toList());
 
 
+    }
+
+    public List<List<Componente>> sugerirMejoresComponentes(int topN){
+    Map<TipoComponente, List<Componente>> porTipo = repo.findAll().stream()
+        .collect(Collectors.groupingBy(Componente::getTipo));
+
+    return mejoresCoches.optimizarConAlgGenetico(porTipo, 100, 300, topN);
     }
 
     

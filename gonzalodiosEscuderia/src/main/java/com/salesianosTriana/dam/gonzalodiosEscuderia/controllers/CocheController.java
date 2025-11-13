@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Carrera;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Coche;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Componente;
-import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.TipoComponente;
+import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Enums.TipoComponente;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.CarreraService;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.CocheService;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.ComponenteService;
@@ -103,6 +103,8 @@ public class CocheController {
     public String crearCoche(Model model) {
         
         model.addAttribute("tipos", TipoComponente.values());
+        List<List<Componente>> mejoresBuilds = cocheService.sugerirMejoresComponentes(3)
+        model.addAttribute("mejoresCoches", mejoresBuilds)
 
 
         List<Componente> componentes = componenteService.componentesSinCoche();
@@ -122,7 +124,6 @@ public class CocheController {
         .collect(Collectors.toList());
         coche.setComponentes(componenteSeleccionado);
         componenteSeleccionado.forEach(c -> c.setCoche(coche));
-
 
         if(cocheService.comprobarRepetirComponentes(coche)){
             bindingResult.rejectValue("componentes", "Error componentes", "No se pueden repetir componentes de un mismo tipo");

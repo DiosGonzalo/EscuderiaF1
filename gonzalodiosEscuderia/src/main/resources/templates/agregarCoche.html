@@ -32,7 +32,34 @@
         <form th:action="@{/garaje/nuevo/crear}" th:object="${coche}" method="post" class="needs-validation" novalidate>
             
             <div class="row g-4">
+
                 
+                <div class="card bg-dark border-success shadow p-3 mb-4">
+                    <h3 class="text-success mb-3">Sugerencias Automáticas (Mejores Builds) 🤖</h3>
+
+                    <div th:if="${mejoresCoches != null}">
+                        
+                        <div th:each="build, iter : ${mejoresCoches}" 
+                            class="mb-3 p-3 border border-success rounded">
+
+                            <h5 class="text-success">Build #[[${iter.index + 1}]]</h5>
+
+                            <ul class="text-light">
+                                <li th:each="comp : ${build}">
+                                    <span th:text="${comp.nombre}"></span>  
+                                    <small class="text-secondary">
+                                        (Tipo: <span th:text="${comp.tipo}"></span>,
+                                        +<span th:text="${comp.caballos}"></span> CV,
+                                        Peso: <span th:text="${comp.peso}"></span>)
+                                    </small>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
                 <div class="col-lg-5">
                     <div class="card bg-f1-dark border-warning shadow-lg p-3 h-100">
                         <h3 class="card-title text-warning mb-4">Información del Chasis</h3>

@@ -1,6 +1,8 @@
 package com.salesianosTriana.dam.gonzalodiosEscuderia.modelos;
 
 
+import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Enums.TipoComponente;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -34,6 +36,12 @@ public class Componente {
     private long vecesUsado;
     private double estado;
     private double caballos;
+
+    private double peso;         
+    private double downforce;    
+    private double drag;         
+    private double gripSeco;     
+    private double gripLluvia;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "coche_id")

@@ -5,6 +5,9 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Enums.Clima;
+import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Enums.Dificultad;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -34,8 +37,8 @@ public class Carrera {
     @Enumerated(EnumType.STRING)
     private Dificultad dificultad;
     private Long numeroVueltas;
-    private String clima;
-
+    @Enumerated (EnumType.STRING)
+    private Clima clima;
     @ManyToMany (cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinTable(
             name = "carrera_coche",

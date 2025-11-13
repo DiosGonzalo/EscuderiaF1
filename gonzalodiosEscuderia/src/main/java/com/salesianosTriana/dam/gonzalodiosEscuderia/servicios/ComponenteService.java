@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Coche;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Componente;
-import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.TipoComponente;
+import com.salesianosTriana.dam.gonzalodiosEscuderia.modelos.Enums.TipoComponente;
 import com.salesianosTriana.dam.gonzalodiosEscuderia.repositorios.ComponenteRepository;
 
 @Service
