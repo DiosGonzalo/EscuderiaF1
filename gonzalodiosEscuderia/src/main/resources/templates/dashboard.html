@@ -186,12 +186,9 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="col-12" th:if="${#lists.isEmpty(#lists.select(componente, comp -> comp.tipo.equalsIgnoreCase(tipo)))}">
-                        <div class="alert alert-dark border-warning shadow-sm text-center animate__animated animate__shakeX">
-                            <i class="bi bi-inbox text-warning fs-1 d-block mb-2"></i>
-                            <p class="mb-0 text-light">No hay componentes de tipo <strong th:text="${tipo}"></strong> registrados.</p>
-                        </div>
+
+                    <div class="col-12" th:if="${noHayComponentesDelTipo}">
+                        <p>No hay componentes de este tipo.</p>
                     </div>
                 </div>
             </div>

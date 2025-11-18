@@ -103,8 +103,8 @@ public class CocheController {
     public String crearCoche(Model model) {
         
         model.addAttribute("tipos", TipoComponente.values());
-        List<List<Componente>> mejoresBuilds = cocheService.sugerirMejoresComponentes(3)
-        model.addAttribute("mejoresCoches", mejoresBuilds)
+        List<List<Componente>> mejoresBuilds = cocheService.sugerirMejoresComponentes(3);
+        model.addAttribute("mejoresCoches", mejoresBuilds);
 
 
         List<Componente> componentes = componenteService.componentesSinCoche();

@@ -1,9 +1,6 @@
 package com.salesianosTriana.dam.gonzalodiosEscuderia.servicios.algoritmos;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import org.springframework.stereotype.Service;
 
@@ -16,11 +13,11 @@ import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 @Builder
-@NoArgsConstructor
+@NoArgsConstructor(force = true)
 @AllArgsConstructor
 @Service
 public class MejoresCoches {
-    Random random = new Random;
+    Random random = new Random();
     private final ComponenteService componenteService;
 
 public List<Componente> generarConfiguracionAleatoria(Map<TipoComponente, List<Componente>> porTipo) {
@@ -30,7 +27,7 @@ public List<Componente> generarConfiguracionAleatoria(Map<TipoComponente, List<C
 
     for (List<Componente> componentes : porTipo.values()) {
         //El rnadom coje un indice random de la lista y ese componente es el que metera
-        Componente elegido = componentes.get((int) (Math.random() * componentes.size()));
+        Componente elegido = componentes.get(random.nextInt(componentes.size()));
         configuracion.add(elegido);
     }
 
@@ -55,16 +52,16 @@ public double evaluarConfiguraciones(List<Componente> componentes) {
 }
 
     //Aqui cogemos la lista de elementos que hemso creado, de manera aleatoria elegimos un componente a cambiar y dentro de ese tipo uno aleatorio y se lo metemos
-    public List<Componente> variacionesConfiguracion(List<Componente> original, Map<TipoComponente,List<Componente> porTipo){
+    public List<Componente> variacionesConfiguracion(List<Componente> original, Map<TipoComponente,List<Componente>> porTipo){
        
-        List<Componente> copia = List<>.of(original);
+        List<Componente> copia = new ArrayList<>(original);
 
         int indexCambiado = (int) (Math.random() * copia.size());
         TipoComponente tipo = copia.get(indexCambiado).getTipo();
 
 
         List<Componente> posibles = porTipo.get(tipo);
-        Componente nuevo = posibles.get((int) (Math.random() * posibles.size()));
+        Componente nuevo = posibles.get(random.nextInt(posibles.size()));
 
         copia.set(indexCambiado, nuevo);
 
@@ -73,54 +70,68 @@ public double evaluarConfiguraciones(List<Componente> componentes) {
     }
 
 
+    public List<List<Componente>> copiarElite(List<List<Componente>> poblacion, int cantidadElite) {
+        List<List<Componente>> elite = new ArrayList<>();
+
+        for (int i = 0; i < cantidadElite; i++) {
+            // Copiamos cada configuración
+            elite.add(new ArrayList<>(poblacion.get(i)));
+        }
+
+        return elite;
+    }
+
+    private List<List<Componente>> generarHijos(
+            List<List<Componente>> elite,
+            Map<TipoComponente,List<Componente>> porTipo,
+            int cantidad) {
+
+        List<List<Componente>> hijos = new ArrayList<>();
+
+        while (hijos.size() < cantidad) {
+            // Elegir padre aleatorio de la élite
+            List<Componente> padre = elite.get(random.nextInt(elite.size()));
+
+            // Crear hijo con variación
+            hijos.add(variacionesConfiguracion(padre, porTipo));
+        }
+
+        return hijos;
+    }
     //Creamos muchos coches con el primer metodo, filtro los mejores, a los mejores les hace cambios y los vuelve a filtrar y despues de muchos cambios te da los mejores
-    public List<Lista<Componente>> optimizarConAlgGenetico(Map<TipoComponente,List<Componente> porTipo,int generaciones, int tamPoblacion, int cantidadCoches){
+    public List<List<Componente>> optimizarConAlgGenetico(
+            Map<TipoComponente,List<Componente>> porTipo,
+            int generaciones,
+            int tamPoblacion,
+            int cantidadCoches) {
+
+        // 1. Crear población inicial aleatoria
         List<List<Componente>> poblacion = new ArrayList<>();
         for (int i = 0; i < tamPoblacion; i++) {
             poblacion.add(generarConfiguracionAleatoria(porTipo));
         }
-        //Creo la cantidad de coches que paso por atributo ptamPoblacion, porque es un estuidio de la pobnlacion de coches
-        for(int i = 0; i < generaciones; i++){
 
+        // 2. Evolucionar durante N generaciones
+        for(int gen = 0; gen < generaciones; gen++) {
 
-            poblacion.sort(Comparator<T>.comparingDouble(this::evaluarConfiguraciones).reversed())
-            int elite = tamPoblacion/5;
-            List<List<Componente>> nuevaPoblacion = new ArrayList<>(poblacion.subList(0, elite));
+            // 2.1 Ordenar por fitness (mejor primero)
+            poblacion.sort(Comparator.comparingDouble(this::evaluarConfiguraciones).reversed());
 
-            while(nuevaPoblacion.size() < tamPoblacion){
+            // 2.2 Seleccionar los mejores (élite = 20%)
+            int cantidadElite = Math.max(2, tamPoblacion / 5);
+            List<List<Componente>> elite = copiarElite(poblacion, cantidadElite);
 
-                List<Componente> padre = poblacion.get(random.nextIn(elite));
-                nuevaPoblacion.add(variacionesConfiguracion(padre, porTipo));
-            }
+            // 2.3 Crear nueva población: élite + hijos
+            List<List<Componente>> nuevaPoblacion = new ArrayList<>(elite);
+            int hijosNecesarios = tamPoblacion - cantidadElite;
+            nuevaPoblacion.addAll(generarHijos(elite, porTipo, hijosNecesarios));
 
             poblacion = nuevaPoblacion;
-
-
         }
 
+        // 3. Ordenar resultado final y retornar los mejores
+        poblacion.sort(Comparator.comparingDouble(this::evaluarConfiguraciones).reversed());
 
-        poblacion.sort(Comparator.comparingDouble(this::evaluarConfiguraciones).reversed())
-
-        return poblacion.subList(0,Math.min(cantidadCoches,poblacion.size()));
-
-
+        return poblacion.subList(0, Math.min(cantidadCoches, poblacion.size()));
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 }
